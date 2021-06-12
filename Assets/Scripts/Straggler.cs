@@ -35,10 +35,12 @@ public class Straggler : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            audioSource.Play();
-            circle.GetComponent<Circle>().AddDancer();
-            GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(gameObject, 2.0f);
+            if (circle.GetComponent<Circle>().AddDancer())
+            { 
+                audioSource.Play();
+                GetComponent<SpriteRenderer>().enabled = false;
+                Destroy(gameObject, 2.0f);
+            }
         }
     }
 

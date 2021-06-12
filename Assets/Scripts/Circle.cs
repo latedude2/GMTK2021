@@ -52,13 +52,15 @@ public class Circle : MonoBehaviour
         }
     }
 
-    public void AddDancer()
+    public bool AddDancer()
     {
         if (circleRotationSpeed > newDancerRotationSpeed)
         {
             dancerCount++;
             SpawnDancers(dancerCount);
+            return true;
         }
+        return false;
     }
 
     public bool IsAbleToGetNewDancer()
