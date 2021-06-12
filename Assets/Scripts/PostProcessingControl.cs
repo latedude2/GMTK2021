@@ -10,6 +10,7 @@ public class PostProcessingControl : MonoBehaviour
     float maxScore = 5000;
     private ChromaticAberration chromaticAberration;
     private Bloom bloom;
+    private ColorGrading colorGrading;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +19,19 @@ public class PostProcessingControl : MonoBehaviour
         //Get variables for adjusting post processing effects
         volume.profile.TryGetSettings(out chromaticAberration);
         volume.profile.TryGetSettings(out bloom);
+        volume.profile.TryGetSettings(out colorGrading);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Map(0, 15, 0, maxScore, ScoreManager.score));
         bloom.intensity.value = Map(0, 15, 0, maxScore, ScoreManager.score);
         chromaticAberration.intensity.value = Map(0, 1, 0, maxScore, ScoreManager.score); ;
+    }
+
+    public void AdjustColorGrading()
+    {
+        colorGrading.hueShift.value = Random.Range(-180, 180);
     }
 
     public float Map(float from, float to, float from2, float to2, float value)
