@@ -37,10 +37,14 @@ public class Straggler : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            if (circle == null)
+            { 
+                circle = GameObject.Find("Circle").transform;
+            }
             if (circle.GetComponent<Circle>().AddDancer())
             { 
                 audioSource.Play();
-                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponentInChildren<SpriteRenderer>().enabled = false;
                 Destroy(gameObject, 2.0f);
             }
         }

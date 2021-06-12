@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         Destroy(gameObject, 100.0f);
+        transform.Rotate(new Vector3(0, 0, Random.Range(0,360)));
     }
 
     // called when the cube hits the floor
