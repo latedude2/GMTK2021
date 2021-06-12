@@ -221,6 +221,22 @@ PrefabInstance:
       propertyPath: circleRotation
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: circleRotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: newDancerRotationSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: baseDancerRotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: loseDancerRotationSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2834105915253856619, guid: b7430da10c23dc54491e536086c23165, type: 3}
       propertyPath: m_RootOrder
       value: 1

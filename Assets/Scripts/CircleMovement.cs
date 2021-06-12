@@ -6,20 +6,24 @@ using System;
 public class CircleMovement : MonoBehaviour
 {
     public float movespeed = 1f;
-    public float circleRotation = 10f;
+    public float circleRotationSpeed = 15f;
+    public float baseDancerRotationSpeed = 20f;
+    public float newDancerRotationSpeed = 25f;
+    public float loseDancerRotationSpeed = 5f;
     public List<Transform> dancers;
+    public int dancerCount = 3;
     public GameObject dancerPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnDancers(3);
+        SpawnDancers(dancerCount);
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        transform.Rotate(new Vector3(0, 0, circleRotation * Time.deltaTime));
+        CircleRotation();
     }
     
     void Movement()
@@ -33,8 +37,26 @@ public class CircleMovement : MonoBehaviour
         transform.position += tempVect;
     }
 
+    void CircleRotation()
+    {
+        transform.Rotate(new Vector3(0, 0, circleRotationSpeed * Time.deltaTime));
+        if (circleRotationSpeed > newDancerRotationSpeed)
+        {
+            dancerCount++;
+            circleRotationSpeed = baseDancerRotationSpeed;
+            SpawnDancers(dancerCount);
+        }
+        else if (circleRotationSpeed < loseDancerRotationSpeed)
+        {
+            dancerCount--;
+            circleRotationSpeed = baseDancerRotationSpeed;
+            SpawnDancers(dancerCount);
+        }
+    }
+
     public void SpawnDancers(int num)
     {
+        dancers = new List<Transform>();
         for (int i = 0; i < num; i++)
         {
             /* Distance around the circle */
@@ -50,11 +72,12 @@ public class CircleMovement : MonoBehaviour
             Vector3 spawnPos = transform.position + spawnDir * GetComponent<CircleCollider2D>().radius; // Radius is just the distance away from the point
 
             /* Now spawn */
-            GameObject enemy = Instantiate(dancerPrefab, spawnPos, Quaternion.identity) as GameObject;
-            enemy.transform.parent = transform;
+            GameObject dancer = Instantiate(dancerPrefab, spawnPos, Quaternion.identity) as GameObject;
+            dancer.transform.parent = transform;
 
-            enemy.transform.Rotate(new Vector3(0, 0, radians * Mathf.Rad2Deg + 90));
+            dancer.transform.Rotate(new Vector3(0, 0, radians * Mathf.Rad2Deg + 90));
 
+            dancers.Add(dancer.transform);
         }
     }
 
