@@ -238,6 +238,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121490573, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301785715, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: m_Volume
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308035, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -288,7 +296,7 @@ PrefabInstance:
       objectReference: {fileID: 549269439}
     - target: {fileID: 2235641184504308036, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: firstBeatOffset
-      value: 0
+      value: 4.843
       objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308037, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_Volume
@@ -557,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570214, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: orthographic size
-      value: 2.718874
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_RootOrder

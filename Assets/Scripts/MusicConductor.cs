@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MusicConductor : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class MusicConductor : MonoBehaviour
     //How many seconds have passed since the song started
     public static float dspSongTime;
 
-    private AudioSource musicSource;
+    private AudioSource[] musicSource = new AudioSource[10];
+    public float volumeWhenLayerActive = 0.26f;
 
     private PostProcessingControl post;
 
@@ -43,11 +45,17 @@ public class MusicConductor : MonoBehaviour
         post = GameObject.Find("PostProcessing").GetComponent<PostProcessingControl>();
         //Record the time when the music starts
         dspSongTime = (float)AudioSettings.dspTime;
-        musicSource = GetComponent<AudioSource>();
+        int i = 0;
+        foreach (Transform child in transform)
+        {
+            musicSource[i] = child.GetComponent<AudioSource>();
+            musicSource[i].Play();
+            i++;
+        }
 
         InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
 
-        musicSource.Play();
+        AddMusicLayer();
 
         oldBeatVal = 1000;
     }
@@ -76,5 +84,49 @@ public class MusicConductor : MonoBehaviour
     void CreateBlock()
     {
         blockBeater.CreateNewDroppingBlock();
+    }
+
+    public void AddMusicLayer()
+    {
+        List<AudioSource> filtered = new List<AudioSource>(musicSource).Where(x => x.volume == 0).ToList();
+        if (filtered.Count > 0)
+        {
+            int i = Random.Range(0, filtered.Count);
+            if (filtered[i].volume == 0)
+            {
+                StartCoroutine(IncreaseMusicLayerVolume(i));
+            } 
+        }
+    }
+
+    private IEnumerator IncreaseMusicLayerVolume(int i)
+    {
+        while (musicSource[i].volume < volumeWhenLayerActive)
+        {
+            musicSource[i].volume += 0.0003f;
+            yield return null;
+        }
+    }
+
+    public void RemoveMusicLayer()
+    {
+        List<AudioSource> filtered = new List<AudioSource>(musicSource).Where(x => x.volume > 0).ToList();
+        if (filtered.Count > 0)
+        {
+            int i = Random.Range(0, filtered.Count);
+            if (filtered[i].volume > 0)
+            {
+                StartCoroutine(DecreaseMusicLayerVolume(i));
+            }
+        }
+    }
+
+    private IEnumerator DecreaseMusicLayerVolume(int i)
+    {
+        while (musicSource[i].volume !<= 0)
+        {
+            musicSource[i].volume += 0.0003f;
+            yield return null;
+        }
     }
 }
