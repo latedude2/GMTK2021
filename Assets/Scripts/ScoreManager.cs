@@ -30,9 +30,14 @@ namespace ScoreSystem
             score -= 5;
         }
 
-        public static ScoreType CalculateScore(float yPosition, float lowTopMargin, float lowBottomMargin, float highTopMargin, float highBottomMargin)
+        public static ScoreType CalculateScore(float yPosition, float yTarget, float lowTopMargin, float lowBottomMargin, float highTopMargin, float highBottomMargin)
         {
-            if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
+            if ((int) yPosition == (int) yTarget)
+            {
+                score += 5;
+                return ScoreType.Hit; //TODO change this to perfect hit
+            }
+            else if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
             {
                 score += 3;
                 return ScoreType.Hit;
@@ -52,6 +57,6 @@ namespace ScoreSystem
 
     public enum ScoreType
     {
-        Hit, AverageHit, Miss
+        PerfectHit, Hit, AverageHit, Miss
     }
 }
