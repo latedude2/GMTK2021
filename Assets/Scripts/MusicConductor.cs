@@ -107,4 +107,26 @@ public class MusicConductor : MonoBehaviour
             yield return null;
         }
     }
+
+    public void RemoveMusicLayer()
+    {
+        List<AudioSource> filtered = new List<AudioSource>(musicSource).Where(x => x.volume > 0).ToList();
+        if (filtered.Count > 0)
+        {
+            int i = Random.Range(0, filtered.Count);
+            if (filtered[i].volume > 0)
+            {
+                StartCoroutine(DecreaseMusicLayerVolume(i));
+            }
+        }
+    }
+
+    private IEnumerator DecreaseMusicLayerVolume(int i)
+    {
+        while (musicSource[i].volume !<= 0)
+        {
+            musicSource[i].volume += 0.0003f;
+            yield return null;
+        }
+    }
 }
