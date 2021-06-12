@@ -9,9 +9,9 @@ public class MusicConductor : MonoBehaviour
     //The offset to the first beat of the song in seconds
     public float firstBeatOffset;
 
-    public float musicOffset;
-
     public BlockBeater blockBeater;
+
+    public float distanceBetweenBlocks = 800;
 
     [Header("Song trackers. DO NOT SET THESE")]
     //Current song position, in seconds
@@ -26,66 +26,36 @@ public class MusicConductor : MonoBehaviour
     //How many seconds have passed since the song started
     public static float dspSongTime;
 
-
     private AudioSource musicSource;
-
-    private float oldBeatVal;
-
-    private bool isFirstBlockCreated;
-    private bool hasMusicStarted;
-
-    private float musicOffsetCounter;
 
     private void Awake()
     {
         //Calculate the number of seconds in each beat
         secPerBeat = 60f / songBPM;
-        musicOffset = 800 / DroppingBlock.speed;
     }
 
     void Start()
     {
+        //Record the time when the music starts
+        dspSongTime = (float)AudioSettings.dspTime;
         musicSource = GetComponent<AudioSource>();
+
+        InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
+
+        musicSource.Play();
     }
 
     void FixedUpdate()
     {
-        if (!hasMusicStarted)
-        {
-            if (!isFirstBlockCreated)
-            {
-                blockBeater.CreateNewDroppingBlock();
-                isFirstBlockCreated = true;
-            }
+        //determine how many seconds since the song started
+        songPosition = (float) (AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 
-            musicOffsetCounter += Time.fixedDeltaTime;
-
-            if (musicOffsetCounter >= musicOffset)
-                StartMusic();
-        } 
-        else
-        {
-            //determine how many seconds since the song started
-            songPosition = (float) (AudioSettings.dspTime - dspSongTime - firstBeatOffset);
-
-            //determine how many beats since the song started
-            songPositionInBeats = songPosition / secPerBeat;
-
-            float newBeatVal = (int) (songPositionInBeats + 1000);
-            if (newBeatVal != oldBeatVal)
-            {
-                blockBeater.CreateNewDroppingBlock();
-                oldBeatVal = newBeatVal;
-            }
-        }
+        //determine how many beats since the song started
+        songPositionInBeats = songPosition / secPerBeat;
     }
 
-    void StartMusic()
+    void CreateBlock()
     {
-        //Record the time when the music starts
-        dspSongTime = (float) AudioSettings.dspTime;
-
-        musicSource.Play();
-        hasMusicStarted = true;
+        blockBeater.CreateNewDroppingBlock();
     }
 }
