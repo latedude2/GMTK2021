@@ -20,7 +20,9 @@ namespace ScoreSystem
 
         private void Update()
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score: " + (score-60).ToString();
+            if (score < 60)
+                score = 60;
         }
 
         public static void MissedTarget()
