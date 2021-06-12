@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ScoreSystem;
 
 public class Obstacle : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Destroy(gameObject, 100.0f);
     }
 
     // called when the cube hits the floor
