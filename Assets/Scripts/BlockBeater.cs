@@ -9,7 +9,8 @@ public class BlockBeater : MonoBehaviour
 
     public GameObject droppingBlockPrefab;
 
-    private RectTransform onBeatBlockTransform;
+    [System.NonSerialized]
+    public RectTransform onBeatBlockTransform;
 
     private readonly Queue<DroppingBlock> droppingBlockQueue = new Queue<DroppingBlock>();
 
@@ -28,7 +29,7 @@ public class BlockBeater : MonoBehaviour
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
         targetY = onBeatBlockTransform.position.y;
-        bottomY = droppingBlockTransform.rect.height / 2;
+        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 - 1;
 
         lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2;
         lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2;
