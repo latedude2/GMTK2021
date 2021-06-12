@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 9215584438474774577}
   - component: {fileID: 8790273738709023776}
   - component: {fileID: 6359370055443318941}
+  - component: {fileID: 3046904253095622432}
   m_Layer: 0
   m_Name: Dancer
   m_TagString: Untagged
@@ -128,6 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f94bca49a9b3884f9cef5b2034e307e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  circle: {fileID: 0}
   random: 0
   beginShuffle: 0.2
   addedShuffleMax: 0.4
@@ -150,3 +153,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3046904253095622432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755158563672999344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b5478391a00cf4a8c2f172c14b6197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6359370055443318941}
+  anim1: {fileID: 9100000, guid: ccad540cccb69ee42895659240a4df71, type: 2}
+  anim2: {fileID: 9100000, guid: 88f0410ba33352a47925c073150fcb7c, type: 2}
+  anim3: {fileID: 9100000, guid: 7d9ae9d3afe82ad4b97aa567c621763f, type: 2}
+  anim4: {fileID: 9100000, guid: f7f5af9842d6b574ca673b8e4d58f79b, type: 2}

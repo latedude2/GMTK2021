@@ -20,7 +20,9 @@ namespace ScoreSystem
 
         private void Update()
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score: " + (score-60).ToString();
+            if (score < 60)
+                score = 60;
         }
 
         public static void MissedTarget()
@@ -32,7 +34,7 @@ namespace ScoreSystem
         {
             if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
             {
-                score += 10;
+                score += 5;
                 return ScoreType.Hit;
             }
             else if (yPosition >= highBottomMargin && yPosition <= highTopMargin)
