@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log("Updating time");
+        //Debug.Log("Updating time");
         timeLeftToBeat = Mathf.Max(0, timeLeftToBeat - Time.fixedDeltaTime);
         timerText.text = timeLeftToBeat.ToString("0.00");
 

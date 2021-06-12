@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static float lowMisclickMargin = MusicConductor.secPerBeat * 0.1f;
     public static float highMisclickMargin = MusicConductor.secPerBeat * 0.15f;
 
-    private static float score = 0;
+    public static float score = 60;
 
     private Text scoreText;
 
