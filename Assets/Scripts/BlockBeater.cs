@@ -9,6 +9,8 @@ public class BlockBeater : MonoBehaviour
 
     public GameObject droppingBlockPrefab;
 
+    public AudioClip hitSound;
+
     [System.NonSerialized]
     public RectTransform onBeatBlockTransform;
 
@@ -21,6 +23,8 @@ public class BlockBeater : MonoBehaviour
     private float lowBottomMargin;
     private float highTopMargin;
     private float highBottomMargin;
+
+    private AudioSource effectPlayer;
 
     private void Start()
     {
@@ -35,6 +39,8 @@ public class BlockBeater : MonoBehaviour
         lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 15;
         highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 50;
         highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 50;
+
+        effectPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,6 +54,12 @@ public class BlockBeater : MonoBehaviour
 
                 ScoreType scoreType = ScoreManager.CalculateScore(droppingBlock.gameObject.transform.position.y, targetY, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
                 droppingBlock.ChangeSprite(scoreType);
+
+                if(scoreType is ScoreType.Hit)
+                {
+                    effectPlayer.clip = hitSound;
+                    effectPlayer.Play();
+                }
 
                 Destroy(droppingBlock.gameObject, 0.25f);
             }

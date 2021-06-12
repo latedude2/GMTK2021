@@ -369,10 +369,6 @@ PrefabInstance:
       propertyPath: blockBeater
       value: 
       objectReference: {fileID: 458926679}
-    - target: {fileID: 2235641184504308036, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
-      propertyPath: distanceBetweenBlocks
-      value: 800
-      objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308038, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
