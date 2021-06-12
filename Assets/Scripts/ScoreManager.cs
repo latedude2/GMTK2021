@@ -8,7 +8,7 @@ namespace ScoreSystem
     public class ScoreManager : MonoBehaviour
     {
 
-        public static float score = 0;
+        public static float score = 60;
 
         private Text scoreText;
 
