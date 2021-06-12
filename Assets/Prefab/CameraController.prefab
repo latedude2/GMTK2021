@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7562420748716193022}
   - component: {fileID: 7562420748716193021}
+  - component: {fileID: 1523535292060844336}
   m_Layer: 0
   m_Name: CameraController
   m_TagString: Untagged
@@ -58,6 +59,18 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 7562420750300239010}
+--- !u!114 &1523535292060844336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562420748716193020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9a4eefb5630974098f20123f952c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7562420750300239009
 GameObject:
   m_ObjectHideFlags: 0
