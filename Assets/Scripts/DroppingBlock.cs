@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroppingBlock : MonoBehaviour
 {
-    public float speed = 700;
+    public static float speed = 800;
     public bool isStopped;
 
     private void FixedUpdate()
