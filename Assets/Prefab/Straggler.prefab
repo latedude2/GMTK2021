@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 814714942400776621}
   - component: {fileID: 202131056940420194}
   - component: {fileID: 7686231990473202126}
+  - component: {fileID: 7964380410784076789}
   m_Layer: 0
   m_Name: Straggler
   m_TagString: Untagged
@@ -103,6 +104,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7964380410784076789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480528295641637505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b5478391a00cf4a8c2f172c14b6197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7686231990473202126}
+  anim1: {fileID: 9100000, guid: ccad540cccb69ee42895659240a4df71, type: 2}
+  anim2: {fileID: 9100000, guid: 88f0410ba33352a47925c073150fcb7c, type: 2}
+  anim3: {fileID: 9100000, guid: 7d9ae9d3afe82ad4b97aa567c621763f, type: 2}
+  anim4: {fileID: 9100000, guid: f7f5af9842d6b574ca673b8e4d58f79b, type: 2}
 --- !u!1 &7996439442872779572
 GameObject:
   m_ObjectHideFlags: 0
