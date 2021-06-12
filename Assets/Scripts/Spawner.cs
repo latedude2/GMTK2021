@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject StragglerPrefab;
     public GameObject ObstaclePrefab;
-    public float spawnTime = 5f;
+    public float spawnTime = 20f;
     // Start is called before the first frame update
     void Start()
     {
