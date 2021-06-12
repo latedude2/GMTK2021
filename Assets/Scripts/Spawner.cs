@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnObject(ObstaclePrefab, spawnTime));
+        StartCoroutine(SpawnObject(ObstaclePrefab, spawnTime));
         StartCoroutine(SpawnObject(StragglerPrefab, spawnTime));
     }
 

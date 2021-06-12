@@ -126,4 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StragglerPrefab: {fileID: 7996439442872779572, guid: 57ecf9497a6098b498679c004c077843, type: 3}
   ObstaclePrefab: {fileID: 2984328152658301917, guid: a48c0584f6afd464390e0c9622c42dcb, type: 3}
-  spawnTime: 20
+  spawnTime: 7
