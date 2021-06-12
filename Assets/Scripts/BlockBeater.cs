@@ -11,7 +11,7 @@ public class BlockBeater : MonoBehaviour
 
     private RectTransform onBeatBlockTransform;
 
-    private Queue<DroppingBlock> droppingBlockQueue = new Queue<DroppingBlock>();
+    private readonly Queue<DroppingBlock> droppingBlockQueue = new Queue<DroppingBlock>();
 
     private float targetY;
     private float bottomY;
@@ -24,7 +24,6 @@ public class BlockBeater : MonoBehaviour
     private void Start()
     {
         onBeatBlockTransform = gameObject.transform.Find("OnBeatBlock") as RectTransform;
-        InvokeRepeating(nameof(CreateNewDroppingBlock), MusicConductor.dspSongTime, MusicConductor.secPerBeat);
 
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
