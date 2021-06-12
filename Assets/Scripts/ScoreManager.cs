@@ -27,19 +27,19 @@ namespace ScoreSystem
 
         public static void MissedTarget()
         {
-            score -= 10;
+            score -= 5;
         }
 
         public static ScoreType CalculateScore(float yPosition, float lowTopMargin, float lowBottomMargin, float highTopMargin, float highBottomMargin)
         {
             if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
             {
-                score += 5;
+                score += 3;
                 return ScoreType.Hit;
             }
             else if (yPosition >= highBottomMargin && yPosition <= highTopMargin)
             {
-                score += 2;
+                score += 1;
                 return ScoreType.AverageHit;
             }
             else

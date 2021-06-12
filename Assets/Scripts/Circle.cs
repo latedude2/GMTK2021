@@ -73,7 +73,7 @@ public class Circle : MonoBehaviour
 
     public void SpawnDancers(int num)
     {
-        GetComponent<CircleCollider2D>().radius = num / (2 * Mathf.PI) * 0.5f;
+        GetComponent<CircleCollider2D>().radius = num / (2 * Mathf.PI) * 0.6f;
         foreach (Transform dancer in dancers)
         {
             Destroy(dancer.gameObject);
@@ -91,7 +91,7 @@ public class Circle : MonoBehaviour
             Vector3 spawnDir = new Vector3(horizontal, vertical, 1);
 
             /* Get the spawn position */
-            Vector3 spawnPos = transform.position + spawnDir * GetComponent<CircleCollider2D>().radius; // Radius is just the distance away from the point
+            Vector3 spawnPos = transform.position + spawnDir * (GetComponent<CircleCollider2D>().radius - 0.1f); // Radius is just the distance away from the point
 
             /* Now spawn */
             GameObject dancer = Instantiate(dancerPrefab, spawnPos, Quaternion.identity) as GameObject;
