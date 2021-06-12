@@ -32,7 +32,7 @@ namespace ScoreSystem
         {
             if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
             {
-                score += 10;
+                score += 5;
                 return ScoreType.Hit;
             }
             else if (yPosition >= highBottomMargin && yPosition <= highTopMargin)
