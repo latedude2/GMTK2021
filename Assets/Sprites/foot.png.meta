@@ -125,9 +125,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 31
-        y: 1352
+        y: 1347
         width: 544
-        height: 292
+        height: 293
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,9 +145,9 @@ TextureImporter:
       name: foot_1
       rect:
         serializedVersion: 2
-        x: 73
+        x: 31
         y: 1137
-        width: 440
+        width: 544
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -166,9 +166,9 @@ TextureImporter:
       name: foot_2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 31
         y: 877
-        width: 440
+        width: 544
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -187,9 +187,9 @@ TextureImporter:
       name: foot_3
       rect:
         serializedVersion: 2
-        x: 66
+        x: 24
         y: 613
-        width: 440
+        width: 544
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -208,9 +208,9 @@ TextureImporter:
       name: foot_4
       rect:
         serializedVersion: 2
-        x: 73
-        y: 366
-        width: 440
+        x: 31
+        y: 363
+        width: 544
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -229,9 +229,9 @@ TextureImporter:
       name: foot_5
       rect:
         serializedVersion: 2
-        x: 70
+        x: 31
         y: 46
-        width: 431
+        width: 544
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
