@@ -29,12 +29,12 @@ public class BlockBeater : MonoBehaviour
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
         targetY = onBeatBlockTransform.position.y;
-        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 - 1;
+        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 51;
 
-        lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2;
-        lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2;
-        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2;
-        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2;
+        lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 15;
+        lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 15;
+        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 50;
+        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 50;
     }
 
     private void Update()
@@ -45,17 +45,9 @@ public class BlockBeater : MonoBehaviour
             {
                 DroppingBlock droppingBlock = droppingBlockQueue.Dequeue();
                 droppingBlock.isStopped = true;
-                float yBlock = droppingBlock.gameObject.transform.position.y;
 
-                ScoreType scoreType = ScoreManager.CalculateScore(yBlock, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
-
-                Image droppingBlockImage = droppingBlock.GetComponent<Image>();
-                if (scoreType is ScoreType.Hit)
-                    droppingBlockImage.color = Color.green;
-                else if (scoreType is ScoreType.AverageHit)
-                    droppingBlockImage.color = Color.yellow;
-                else if(scoreType is ScoreType.Miss)
-                    droppingBlockImage.color = Color.red;
+                ScoreType scoreType = ScoreManager.CalculateScore(droppingBlock.gameObject.transform.position.y, targetY, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
+                droppingBlock.ChangeSprite(scoreType);
 
                 Destroy(droppingBlock.gameObject, 0.25f);
             }
@@ -63,9 +55,9 @@ public class BlockBeater : MonoBehaviour
             if (droppingBlockQueue.Count > 0 && droppingBlockQueue.Peek().transform.position.y <= bottomY)
             {
                 DroppingBlock droppingBlock = droppingBlockQueue.Dequeue();
+                droppingBlock.isStopped = true;
 
-                Image droppingBlockImage = droppingBlock.GetComponent<Image>();
-                droppingBlockImage.color = Color.red;
+                droppingBlock.ChangeSprite(ScoreType.Miss);
                 ScoreManager.MissedTarget();
                 Destroy(droppingBlock.gameObject, 0.25f);
             }

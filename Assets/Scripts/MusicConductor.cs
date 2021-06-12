@@ -28,6 +28,8 @@ public class MusicConductor : MonoBehaviour
 
     private AudioSource musicSource;
 
+    private int oldBeatVal;
+
     private void Awake()
     {
         //Calculate the number of seconds in each beat
@@ -43,6 +45,8 @@ public class MusicConductor : MonoBehaviour
         InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
 
         musicSource.Play();
+
+        oldBeatVal = 1000;
     }
 
     void FixedUpdate()
@@ -52,6 +56,18 @@ public class MusicConductor : MonoBehaviour
 
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
+
+        int newBeatVal = (int) (songPositionInBeats + 1000);
+        if (newBeatVal != oldBeatVal) 
+        {
+            OnBeat(); 
+            oldBeatVal = newBeatVal; 
+        }
+    }
+
+    void OnBeat()
+    {
+
     }
 
     void CreateBlock()
