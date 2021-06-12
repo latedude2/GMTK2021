@@ -34,8 +34,8 @@ public class Obstacle : MonoBehaviour
             }
             animator.speed = 1;
             audioSource.Play();
-            ScoreManager.score -= 5;
-            Destroy(gameObject, 10.0f);
+            ScoreManager.score -= 20;
+            Destroy(gameObject, 60.0f);
         }
     }
 }

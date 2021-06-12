@@ -238,6 +238,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121490573, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301785715, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: m_Volume
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308035, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -286,6 +294,14 @@ PrefabInstance:
       propertyPath: blockBeater
       value: 
       objectReference: {fileID: 549269439}
+    - target: {fileID: 2235641184504308036, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: firstBeatOffset
+      value: 4.843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235641184504308037, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: m_Volume
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308038, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
@@ -317,11 +333,11 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.131
+  m_DeadZoneWidth: 0.147
   m_DeadZoneHeight: 0.139
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.36
+  m_SoftZoneWidth: 0.982
   m_SoftZoneHeight: 0.36
   m_BiasX: 0
   m_BiasY: 0
@@ -557,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04000012
+      value: -0.03999982
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -622,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562420748716193022, guid: 362e62843e71cf643910ece641f0f95d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04000012
+      value: -0.03999982
       objectReference: {fileID: 0}
     - target: {fileID: 7562420748716193022, guid: 362e62843e71cf643910ece641f0f95d, type: 3}
       propertyPath: m_LocalPosition.y

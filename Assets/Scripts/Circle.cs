@@ -99,6 +99,7 @@ public class Circle : MonoBehaviour
 
             dancer.transform.Rotate(new Vector3(0, 0, radians * Mathf.Rad2Deg + 90));
 
+            dancer.transform.position = new Vector3(dancer.transform.position.x, dancer.transform.position.y, 0);
             dancers.Add(dancer.transform);
         }
     }

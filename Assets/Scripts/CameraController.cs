@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     {
         vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Map(0, maxCameraShake, 0, maxScore, ScoreManager.score);
         vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Map(0, maxCameraShake, 0, maxScore, ScoreManager.score);
-        vcam.m_Lens.OrthographicSize = circle.GetComponent<CircleCollider2D>().radius * 7;
+        vcam.m_Lens.OrthographicSize = circle.GetComponent<CircleCollider2D>().radius * 2 + 1;
     }
 
     public float Map(float from, float to, float from2, float to2, float value)

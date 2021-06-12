@@ -17,7 +17,7 @@ public class Straggler : MonoBehaviour
     void Update()
     {
         float step = 0;
-        if (Vector3.Distance(circle.position, transform.position) < circle.GetComponent<CircleCollider2D>().radius * 4)
+        if (Vector3.Distance(circle.position, transform.position) < circle.GetComponent<CircleCollider2D>().radius * 2)
         {
             if(!circle.GetComponent<Circle>().IsAbleToGetNewDancer())
             {
