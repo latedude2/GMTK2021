@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 
-    public static float period = 1;
-
     public static float timeLeftToBeat;
 
     private Text timerText;
 
     public void Awake()
     {
-        timeLeftToBeat = period;
+        timeLeftToBeat = MusicConductor.secPerBeat;
     }
 
     public void Start()
@@ -30,7 +28,7 @@ public class Timer : MonoBehaviour
 
         if (timeLeftToBeat <= 0)
         {
-            timeLeftToBeat = period;
+            timeLeftToBeat = MusicConductor.secPerBeat;
         }
     }
 }

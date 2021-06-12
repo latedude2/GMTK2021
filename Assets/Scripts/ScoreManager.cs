@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static float lowMisclickMargin = Timer.period * 0.1f;
-    public static float highMisclickMargin = Timer.period * 0.15f;
+    public static float lowMisclickMargin = MusicConductor.secPerBeat * 0.1f;
+    public static float highMisclickMargin = MusicConductor.secPerBeat * 0.15f;
 
     private static float score = 0;
 
@@ -25,11 +25,11 @@ public class ScoreManager : MonoBehaviour
 
     public static void ProcessClick(float timeLeftToBeat)
     {
-        if (timeLeftToBeat < lowMisclickMargin || timeLeftToBeat > Timer.period - lowMisclickMargin)
+        if (timeLeftToBeat < lowMisclickMargin || timeLeftToBeat > MusicConductor.secPerBeat - lowMisclickMargin)
         {
             score += 10;
         } 
-        else if (timeLeftToBeat < highMisclickMargin || timeLeftToBeat > Timer.period - highMisclickMargin) 
+        else if (timeLeftToBeat < highMisclickMargin || timeLeftToBeat > MusicConductor.secPerBeat - highMisclickMargin) 
         {
             score++;
         } 

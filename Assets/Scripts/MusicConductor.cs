@@ -10,16 +10,16 @@ public class MusicConductor : MonoBehaviour
 
     [Header("Song trackers. DO NOT SET THESE")]
     //Current song position, in seconds
-    public float songPosition;
+    public static float songPosition;
 
     //Current song position, in beats
-    public float songPositionInBeats;
+    public static float songPositionInBeats;
 
     //The number of seconds for each song beat
-    public float secPerBeat;
+    public static float secPerBeat;
 
     //How many seconds have passed since the song started
-    public float dspSongTime;
+    public static float dspSongTime;
 
     //an AudioSource attached to this GameObject that will play the music.
     private AudioSource musicSource;
