@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MusicConductor : MonoBehaviour
 {
-    //Song beats per minute
-    //This is determined by the song you're trying to sync up to
     public float songBPM;
 
     [Header("Song trackers. DO NOT SET THESE")]
@@ -21,21 +19,21 @@ public class MusicConductor : MonoBehaviour
     //How many seconds have passed since the song started
     public static float dspSongTime;
 
-    //an AudioSource attached to this GameObject that will play the music.
     private AudioSource musicSource;
+
+    private void Awake()
+    {
+        //Calculate the number of seconds in each beat
+        secPerBeat = 60f / songBPM;
+    }
 
     void Start()
     {
-        //Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
-
-        //Calculate the number of seconds in each beat
-        secPerBeat = 60f / songBPM;
 
         //Record the time when the music starts
         dspSongTime = (float)AudioSettings.dspTime;
 
-        //Start the music
         musicSource.Play();
     }
 

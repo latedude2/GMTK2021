@@ -3,39 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+namespace ScoreSystem
 {
-    public static float lowMisclickMargin = MusicConductor.secPerBeat * 0.1f;
-    public static float highMisclickMargin = MusicConductor.secPerBeat * 0.15f;
-
-    public static float score = 60;
-
-    private Text scoreText;
-
-    void Start()
+    public class ScoreManager : MonoBehaviour
     {
-        scoreText = GetComponent<Text>();
-        scoreText.text = "Score: " + score;
-    }
 
-    private void Update()
-    {
-        scoreText.text = "Score: " + score.ToString();
-    }
+        public static float score = 0;
 
-    public static void ProcessClick(float timeLeftToBeat)
-    {
-        if (timeLeftToBeat < lowMisclickMargin || timeLeftToBeat > MusicConductor.secPerBeat - lowMisclickMargin)
+        private Text scoreText;
+
+        void Start()
         {
-            score += 10;
-        } 
-        else if (timeLeftToBeat < highMisclickMargin || timeLeftToBeat > MusicConductor.secPerBeat - highMisclickMargin) 
-        {
-            score++;
-        } 
-        else
-        {
-            score -= 5;
+            scoreText = GetComponent<Text>();
+            scoreText.text = "Score: " + score;
         }
+
+        private void Update()
+        {
+            scoreText.text = "Score: " + score.ToString();
+        }
+
+        public static void MissedTarget()
+        {
+            score -= 10;
+        }
+
+        public static ScoreType CalculateScore(float yPosition, float lowTopMargin, float lowBottomMargin, float highTopMargin, float highBottomMargin)
+        {
+            if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
+            {
+                score += 10;
+                return ScoreType.Hit;
+            }
+            else if (yPosition >= highBottomMargin && yPosition <= highTopMargin)
+            {
+                score += 2;
+                return ScoreType.AverageHit;
+            }
+            else
+            {
+                score -= 5;
+                return ScoreType.Miss;
+            }
+        }
+    }
+
+    public enum ScoreType
+    {
+        Hit, AverageHit, Miss
     }
 }
