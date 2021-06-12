@@ -360,6 +360,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a73b3dfdac0eb44c990e3ab08b8d242, type: 3}
+--- !u!1 &2012566626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2183218898590733717, guid: 4a73b3dfdac0eb44c990e3ab08b8d242, type: 3}
+  m_PrefabInstance: {fileID: 663483111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2012566627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012566626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfbb074e424f4749b24e9027442ae20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StragglerPrefab: {fileID: 7996439442872779572, guid: 57ecf9497a6098b498679c004c077843, type: 3}
+  ObstaclePrefab: {fileID: 2984328152658301917, guid: a48c0584f6afd464390e0c9622c42dcb, type: 3}
+  spawnTime: 5
+--- !u!1 &2074578472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2834105915253856662, guid: b7430da10c23dc54491e536086c23165, type: 3}
+  m_PrefabInstance: {fileID: 2834105914504444651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2074578475
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074578472}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2834105914504444651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,9 +481,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856661, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2834105915253856662, guid: b7430da10c23dc54491e536086c23165, type: 3}
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2834105915253856660, guid: b7430da10c23dc54491e536086c23165, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7430da10c23dc54491e536086c23165, type: 3}
