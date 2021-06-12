@@ -28,6 +28,10 @@ public class Obstacle : MonoBehaviour
             {
                 audioSource = GetComponent<AudioSource>();
             }
+            if(animator == null)
+            {
+                animator = GetComponent<Animator>();
+            }
             animator.speed = 1;
             audioSource.Play();
             ScoreManager.score -= 5;
