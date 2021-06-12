@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songBPM: 154
-  firstBeatOffset: 0
+  firstBeatOffset: 9.8
   blockBeater: {fileID: 0}
   distanceBetweenBlocks: 800
 --- !u!82 &2235641184504308037

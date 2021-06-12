@@ -26,16 +26,7 @@ public class MusicConductor : MonoBehaviour
     //How many seconds have passed since the song started
     public static float dspSongTime;
 
-    public static float musicOffset;
-
     private AudioSource musicSource;
-
-    private float oldBeatVal;
-
-    private bool areBlocksInvoked;
-    private bool hasMusicStarted;
-
-    private float musicOffsetCounter;
 
     private void Awake()
     {
@@ -45,45 +36,26 @@ public class MusicConductor : MonoBehaviour
 
     void Start()
     {
-        musicOffset = distanceBetweenBlocks / DroppingBlock.speed * secPerBeat;
+        //Record the time when the music starts
+        dspSongTime = (float)AudioSettings.dspTime;
+        musicSource = GetComponent<AudioSource>();
+
+        InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
+
+        musicSource.Play();
     }
 
     void FixedUpdate()
     {
-        if (!hasMusicStarted)
-        {
-            if (!areBlocksInvoked)
-            {
-                InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
-                areBlocksInvoked = true;
-            }
+        //determine how many seconds since the song started
+        songPosition = (float) (AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 
-            musicOffsetCounter += Time.fixedDeltaTime;
-
-            if (musicOffsetCounter >= musicOffset)
-                StartMusic();
-        } 
-        else
-        {
-            //determine how many seconds since the song started
-            songPosition = (float) (AudioSettings.dspTime - dspSongTime - firstBeatOffset);
-
-            //determine how many beats since the song started
-            songPositionInBeats = songPosition / secPerBeat;
-        }
+        //determine how many beats since the song started
+        songPositionInBeats = songPosition / secPerBeat;
     }
 
     void CreateBlock()
     {
         blockBeater.CreateNewDroppingBlock();
-    }
-
-    void StartMusic()
-    {
-        //Record the time when the music starts
-        dspSongTime = (float) AudioSettings.dspTime;
-        musicSource = GetComponent<AudioSource>();
-        musicSource.Play();
-        hasMusicStarted = true;
     }
 }
