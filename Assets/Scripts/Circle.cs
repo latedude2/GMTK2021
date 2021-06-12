@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Circle : MonoBehaviour
+public class CircleMovement : MonoBehaviour
 {
     public float movespeed = 1f;
-    public float circleRotationSpeed = 20f;
+    public float circleRotationSpeed = 15f;
     public float baseDancerRotationSpeed = 20f;
     public float newDancerRotationSpeed = 25f;
-    public float loseDancerRotationSpeed = 15f;
+    public float loseDancerRotationSpeed = 5f;
     public List<Transform> dancers;
     public int dancerCount = 3;
     public GameObject dancerPrefab;
-    public int scoreNeededPerDancer = 20;
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,29 +40,22 @@ public class Circle : MonoBehaviour
     void CircleRotation()
     {
         transform.Rotate(new Vector3(0, 0, circleRotationSpeed * Time.deltaTime));
-        circleRotationSpeed = baseDancerRotationSpeed * ScoreManager.score / (scoreNeededPerDancer * dancerCount);
-
         if (circleRotationSpeed > newDancerRotationSpeed)
         {
             dancerCount++;
+            circleRotationSpeed = baseDancerRotationSpeed;
             SpawnDancers(dancerCount);
         }
         else if (circleRotationSpeed < loseDancerRotationSpeed)
         {
             dancerCount--;
+            circleRotationSpeed = baseDancerRotationSpeed;
             SpawnDancers(dancerCount);
         }
     }
 
-    
-
     public void SpawnDancers(int num)
     {
-        GetComponent<CircleCollider2D>().radius = num / (2 * Mathf.PI) * 0.5f;
-        foreach (Transform dancer in dancers)
-        {
-            Destroy(dancer.gameObject);
-        }
         dancers = new List<Transform>();
         for (int i = 0; i < num; i++)
         {
