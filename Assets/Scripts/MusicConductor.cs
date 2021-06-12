@@ -9,9 +9,9 @@ public class MusicConductor : MonoBehaviour
     //The offset to the first beat of the song in seconds
     public float firstBeatOffset;
 
-    public float musicOffset;
-
     public BlockBeater blockBeater;
+
+    public float distanceBetweenBlocks = 800;
 
     [Header("Song trackers. DO NOT SET THESE")]
     //Current song position, in seconds
@@ -26,12 +26,13 @@ public class MusicConductor : MonoBehaviour
     //How many seconds have passed since the song started
     public static float dspSongTime;
 
+    public static float musicOffset;
 
     private AudioSource musicSource;
 
     private float oldBeatVal;
 
-    private bool isFirstBlockCreated;
+    private bool areBlocksInvoked;
     private bool hasMusicStarted;
 
     private float musicOffsetCounter;
@@ -40,22 +41,21 @@ public class MusicConductor : MonoBehaviour
     {
         //Calculate the number of seconds in each beat
         secPerBeat = 60f / songBPM;
-        musicOffset = 800 / DroppingBlock.speed;
     }
 
     void Start()
     {
-        musicSource = GetComponent<AudioSource>();
+        musicOffset = distanceBetweenBlocks / DroppingBlock.speed * secPerBeat;
     }
 
     void FixedUpdate()
     {
         if (!hasMusicStarted)
         {
-            if (!isFirstBlockCreated)
+            if (!areBlocksInvoked)
             {
-                blockBeater.CreateNewDroppingBlock();
-                isFirstBlockCreated = true;
+                InvokeRepeating(nameof(CreateBlock), firstBeatOffset, secPerBeat);
+                areBlocksInvoked = true;
             }
 
             musicOffsetCounter += Time.fixedDeltaTime;
@@ -70,21 +70,19 @@ public class MusicConductor : MonoBehaviour
 
             //determine how many beats since the song started
             songPositionInBeats = songPosition / secPerBeat;
-
-            float newBeatVal = (int) (songPositionInBeats + 1000);
-            if (newBeatVal != oldBeatVal)
-            {
-                blockBeater.CreateNewDroppingBlock();
-                oldBeatVal = newBeatVal;
-            }
         }
+    }
+
+    void CreateBlock()
+    {
+        blockBeater.CreateNewDroppingBlock();
     }
 
     void StartMusic()
     {
         //Record the time when the music starts
         dspSongTime = (float) AudioSettings.dspTime;
-
+        musicSource = GetComponent<AudioSource>();
         musicSource.Play();
         hasMusicStarted = true;
     }

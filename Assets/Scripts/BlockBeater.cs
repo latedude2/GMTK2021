@@ -9,7 +9,8 @@ public class BlockBeater : MonoBehaviour
 
     public GameObject droppingBlockPrefab;
 
-    private RectTransform onBeatBlockTransform;
+    [System.NonSerialized]
+    public RectTransform onBeatBlockTransform;
 
     private readonly Queue<DroppingBlock> droppingBlockQueue = new Queue<DroppingBlock>();
 
