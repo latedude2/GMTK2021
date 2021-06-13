@@ -1326,6 +1326,6 @@ MonoBehaviour:
   songBPM: 126
   firstBeatOffset: 6.4
   blockBeater: {fileID: 0}
-  distanceBetweenBlocks: 230
+  distanceBetweenBlocks: 250
   volumeWhenLayerActive: 0.26
   postProcessing: {fileID: 0}

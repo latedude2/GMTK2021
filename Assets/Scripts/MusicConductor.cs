@@ -12,7 +12,7 @@ public class MusicConductor : MonoBehaviour
 
     public BlockBeater blockBeater;
 
-    public float distanceBetweenBlocks = 800;
+    public float distanceBetweenBlocks;
 
     [Header("Song trackers. DO NOT SET THESE")]
     //Current song position, in seconds

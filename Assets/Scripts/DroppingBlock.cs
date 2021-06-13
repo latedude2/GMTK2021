@@ -6,7 +6,7 @@ using ScoreSystem;
 
 public class DroppingBlock : MonoBehaviour
 {
-    public static float speed = 230;
+    public static float speed = 250;
     public bool isStopped;
 
     public Sprite perfectHitSprite;
