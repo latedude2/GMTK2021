@@ -48,13 +48,24 @@ public class Circle : MonoBehaviour
 
     void Movement()
     {
+        /*
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-
+        
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * movespeed * Time.deltaTime;
 
         transform.position += tempVect;
+        */
+
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPosition = new Vector3(worldPosition.x, worldPosition.y, 0);
+
+
+        float step = movespeed * Time.deltaTime;
+        // move circle towards mouse
+        if(Vector3.Distance(transform.position, worldPosition) > 0.2f)
+            transform.position = Vector3.MoveTowards(transform.position, worldPosition, step);
     }
 
     void CircleRotation()

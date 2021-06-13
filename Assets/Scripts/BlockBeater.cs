@@ -47,7 +47,7 @@ public class BlockBeater : MonoBehaviour
     {
         if (droppingBlockQueue.Count > 0)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
                 DroppingBlock droppingBlock = droppingBlockQueue.Dequeue();
                 droppingBlock.isStopped = true;
