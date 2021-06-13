@@ -131,8 +131,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2512076972006146112, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512076972006146112, guid: a85714105270e77469ba62eb96326f0d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -158
+      value: -123.49997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512076972006146112, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25.699997
       objectReference: {fileID: 0}
     - target: {fileID: 2512076972529604251, guid: a85714105270e77469ba62eb96326f0d, type: 3}
       propertyPath: m_Pivot.x
@@ -221,14 +229,6 @@ PrefabInstance:
     - target: {fileID: 2512076972529604255, guid: a85714105270e77469ba62eb96326f0d, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163514951367408227, guid: a85714105270e77469ba62eb96326f0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 450
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163514951367408227, guid: a85714105270e77469ba62eb96326f0d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85714105270e77469ba62eb96326f0d, type: 3}
