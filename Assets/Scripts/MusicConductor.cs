@@ -34,6 +34,8 @@ public class MusicConductor : MonoBehaviour
 
     private int oldBeatVal;
 
+    public GameObject postProcessing;
+
     private void Awake()
     {
         //Calculate the number of seconds in each beat
@@ -42,9 +44,6 @@ public class MusicConductor : MonoBehaviour
 
     void Start()
     {
-        GameObject postProcessing = GameObject.Find("PostProcessing");
-        if(postProcessing != null)
-            post.GetComponent<PostProcessingControl>();
         //Record the time when the music starts
         dspSongTime = (float) AudioSettings.dspTime;
         int i = 0;
