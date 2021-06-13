@@ -96,8 +96,7 @@ public class MusicConductor : MonoBehaviour
         if(randomChatterCounter <= 0)
         {
             int i = Random.Range(0, randomChatterSound.Length);
-            randomChatterSource.clip = randomChatterSound[i];
-            randomChatterSource.Play();
+            randomChatterSource.PlayOneShot(randomChatterSound[i], 1);
             randomChatterCounter = Random.Range(minCounter, maxCounter);
         }
     }
