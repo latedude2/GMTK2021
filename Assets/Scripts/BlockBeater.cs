@@ -26,8 +26,11 @@ public class BlockBeater : MonoBehaviour
 
     private AudioSource effectPlayer;
 
+    private Transform circle;
+
     private void Start()
     {
+        circle = GameObject.Find("Circle").transform;
         onBeatBlockTransform = gameObject.transform.Find("OnBeatBlock") as RectTransform;
 
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
@@ -47,8 +50,13 @@ public class BlockBeater : MonoBehaviour
     {
         if (droppingBlockQueue.Count > 0)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
+                foreach(Transform dancer in circle.GetComponent<Circle>().dancers)
+                {
+                    dancer.GetComponentInChildren<Dancer>().Bounce();
+                }
+
                 DroppingBlock droppingBlock = droppingBlockQueue.Dequeue();
                 droppingBlock.isStopped = true;
 

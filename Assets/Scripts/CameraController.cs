@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 {
     public CinemachineVirtualCamera vcam;
     public float maxCameraShake = 4.0f;
-    public float maxScore = 5000.0f;
+    public float maxScore = 1000f;
     public GameObject circle;
     // Start is called before the first frame update
     void Start()

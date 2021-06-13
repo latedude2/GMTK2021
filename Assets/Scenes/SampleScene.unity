@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2512076972006146112, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -158
+      objectReference: {fileID: 0}
     - target: {fileID: 2512076972529604251, guid: a85714105270e77469ba62eb96326f0d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -218,9 +222,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2749691910466227617, guid: a85714105270e77469ba62eb96326f0d, type: 3}
-      propertyPath: m_Volume
-      value: 0.194
+    - target: {fileID: 4163514951367408227, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163514951367408227, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85714105270e77469ba62eb96326f0d, type: 3}
@@ -244,11 +252,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121490573, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.262
       objectReference: {fileID: 0}
     - target: {fileID: 1301785715, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_Volume
-      value: 0.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2235641184504308035, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: m_RootOrder
@@ -298,6 +306,10 @@ PrefabInstance:
       propertyPath: blockBeater
       value: 
       objectReference: {fileID: 549269439}
+    - target: {fileID: 2235641184504308036, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+      propertyPath: postProcessing
+      value: 
+      objectReference: {fileID: 2005373052}
     - target: {fileID: 2235641184504308036, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
       propertyPath: firstBeatOffset
       value: 4.843
@@ -356,6 +368,11 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 100
+--- !u!1 &900062107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2235641184504308038, guid: b1d791d6d8569fe40924fbccbf60cc6f, type: 3}
+  m_PrefabInstance: {fileID: 689580920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1334863167
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +436,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 1000, y: 1000}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -439,6 +456,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005373052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8821976572691749948, guid: dd793d4cadde9204bb6ef9a6c481f05b, type: 3}
+  m_PrefabInstance: {fileID: 8821976573823927429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074578472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2834105915253856662, guid: b7430da10c23dc54491e536086c23165, type: 3}
@@ -478,6 +500,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 900062107}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
       propertyPath: dancerPrefab
       value: 
       objectReference: {fileID: 3585906442993951308, guid: 17c0124d5c823a046a004be68c95d541, type: 3}
@@ -485,6 +511,10 @@ PrefabInstance:
       propertyPath: circleRotation
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
+      propertyPath: musicConductor
+      value: 
+      objectReference: {fileID: 900062107}
     - target: {fileID: 2834105915253856618, guid: b7430da10c23dc54491e536086c23165, type: 3}
       propertyPath: circleRotationSpeed
       value: 30

@@ -7,7 +7,7 @@ using ScoreSystem;
 
 public class PostProcessingControl : MonoBehaviour
 {
-    float maxScore = 5000;
+    float maxScore = 1000;
     private ChromaticAberration chromaticAberration;
     private Bloom bloom;
     private ColorGrading colorGrading;
