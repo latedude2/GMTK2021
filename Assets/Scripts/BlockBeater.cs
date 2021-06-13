@@ -35,7 +35,7 @@ public class BlockBeater : MonoBehaviour
 
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
-        targetY = onBeatBlockTransform.position.y;
+        targetY = onBeatBlockTransform.anchoredPosition.y;
         bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 - 11;
 
         lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 20;
@@ -60,7 +60,7 @@ public class BlockBeater : MonoBehaviour
                 DroppingBlock droppingBlock = droppingBlockQueue.Dequeue();
                 droppingBlock.isStopped = true;
 
-                ScoreType scoreType = ScoreManager.CalculateScore(droppingBlock.gameObject.transform.position.y, targetY, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
+                ScoreType scoreType = ScoreManager.CalculateScore((droppingBlock.gameObject.transform as RectTransform).anchoredPosition.y, targetY, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
                 droppingBlock.ChangeSprite(scoreType);
 
                 if(scoreType is ScoreType.Hit || scoreType is ScoreType.PerfectHit)
