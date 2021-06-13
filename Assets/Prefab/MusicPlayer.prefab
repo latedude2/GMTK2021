@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songBPM: 126
-  firstBeatOffset: 7.75
+  firstBeatOffset: 6.4
   blockBeater: {fileID: 0}
   distanceBetweenBlocks: 230
   volumeWhenLayerActive: 0.26

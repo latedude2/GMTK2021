@@ -86,7 +86,6 @@ public class BlockBeater : MonoBehaviour
 
     public void CreateNewDroppingBlock()
     {
-        GameObject newBlock = Instantiate(droppingBlockPrefab, transform);
-        droppingBlockQueue.Enqueue(newBlock.GetComponent<DroppingBlock>());
+        droppingBlockQueue.Enqueue(Instantiate(droppingBlockPrefab, transform).GetComponent<DroppingBlock>());
     }
 }
