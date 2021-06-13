@@ -502,8 +502,8 @@ MonoBehaviour:
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.488
+  m_ScreenY: 0.563
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.147
   m_DeadZoneHeight: 0.139
@@ -511,8 +511,8 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.982
   m_SoftZoneHeight: 0.36
-  m_BiasX: 0
-  m_BiasY: 0
+  m_BiasX: -0.248
+  m_BiasY: -0.0929916
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8
@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570214, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: orthographic size
-      value: 2.336902
+      value: 1.381972
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_RootOrder
@@ -859,11 +859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03999988
+      value: 0.018964104
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15000007
+      value: 0.024128556
       objectReference: {fileID: 0}
     - target: {fileID: 3655858590119570393, guid: 790946b65b4628f4392fc2b490fa994c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -924,11 +924,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562420748716193022, guid: 362e62843e71cf643910ece641f0f95d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03999988
+      value: 0.018964104
       objectReference: {fileID: 0}
     - target: {fileID: 7562420748716193022, guid: 362e62843e71cf643910ece641f0f95d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15000007
+      value: 0.024128556
       objectReference: {fileID: 0}
     - target: {fileID: 7562420748716193022, guid: 362e62843e71cf643910ece641f0f95d, type: 3}
       propertyPath: m_LocalPosition.z
