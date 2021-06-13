@@ -7,11 +7,16 @@ public class Straggler : MonoBehaviour
     public float speed = 1;
     public Transform circle;
     public AudioSource audioSource;
+    public AudioClip[] joinSound;
+
     // Start is called before the first frame update
     void Start()
     {
         circle = GameObject.Find("Circle").transform;
         speed = circle.GetComponent<Circle>().movespeed;
+        
+        int i = Random.Range(0, joinSound.Length); 
+        audioSource.clip = joinSound[i];
     }
 
     void Update()
