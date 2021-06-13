@@ -21,8 +21,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Map(0, maxCameraShake, 0, maxScore, Score.score);
-        vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Map(0, maxCameraShake, 0, maxScore, Score.score);
+        vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Map(0.5f, maxCameraShake, 0, maxScore, Score.score);
+        vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Map(0.5f, maxCameraShake, 0, maxScore, Score.score);
         vcam.m_Lens.OrthographicSize = circle.GetComponent<CircleCollider2D>().radius * 2 + 1;
     }
 
