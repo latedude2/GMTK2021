@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
 
-    void LoadScene()
+    public void LoadScene()
     {
+        Debug.Log("Scene load called");
         SceneManager.LoadScene("SampleScene");
     }
 }
