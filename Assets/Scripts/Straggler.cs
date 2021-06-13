@@ -48,7 +48,7 @@ public class Straggler : MonoBehaviour
             }
             if (circle.GetComponent<Circle>().AddDancer())
             {
-                audioSource.pitch = Random.Range(.5f, 1.5f);
+                audioSource.pitch = Random.Range(.75f, 1.25f);
                 audioSource.Play();
                 GetComponentInChildren<SpriteRenderer>().enabled = false;
                 Destroy(gameObject, 2.0f);
