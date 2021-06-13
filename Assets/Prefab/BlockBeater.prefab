@@ -189,3 +189,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droppingBlockPrefab: {fileID: 0}
+  hitSound: {fileID: 0}
