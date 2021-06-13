@@ -20,7 +20,7 @@ public class Dancer : MonoBehaviour
     void Update()
     {
         animator.speed = circle.GetComponent<Circle>().circleRotationSpeed / circle.GetComponent<Circle>().baseDancerRotationSpeed;
-        transform.localPosition = 0.3f * new Vector3(Mathf.PerlinNoise(Mathf.Sin(random + Time.time), Mathf.Cos(random + Time.time)) - 0.5f,
+        transform.localPosition = 0.8f * new Vector3(Mathf.PerlinNoise(Mathf.Sin(random + Time.time), Mathf.Cos(random + Time.time)) - 0.5f,
             Mathf.PerlinNoise(Mathf.Cos(random + Time.time), Mathf.Sin(random + Time.time)) - 0.5f,
             1);
 
