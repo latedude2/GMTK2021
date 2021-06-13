@@ -42,6 +42,8 @@ public class MusicConductor : MonoBehaviour
     public AudioSource randomChatterSource;
     public AudioClip[] randomChatterSound;
 
+    private int layerSyncCounter = 400;
+
     private void Awake()
     {
         //Calculate the number of seconds in each beat
@@ -87,6 +89,20 @@ public class MusicConductor : MonoBehaviour
             oldBeatVal = newBeatVal; 
         }
 
+        layerSyncCounter--;
+        if (layerSyncCounter <= 0)
+        {
+            SyncLayers();
+        }
+    }
+    
+    void SyncLayers()
+    {
+        for (int i = 1; i < musicSource.Length; i++)
+        {
+            musicSource[i].timeSamples = musicSource[0].timeSamples;
+        }
+        layerSyncCounter = 400;
     }
 
     void Update()
