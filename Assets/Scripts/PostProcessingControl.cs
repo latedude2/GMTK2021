@@ -31,6 +31,7 @@ public class PostProcessingControl : MonoBehaviour
 
     public void AdjustColorGrading()
     {
+        Debug.Log("Adjusting color hue");
         colorGrading.hueShift.value = Random.Range(-180, 180);
     }
 
