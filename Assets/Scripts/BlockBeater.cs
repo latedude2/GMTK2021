@@ -55,7 +55,7 @@ public class BlockBeater : MonoBehaviour
                 ScoreType scoreType = ScoreManager.CalculateScore(droppingBlock.gameObject.transform.position.y, targetY, lowTopMargin, lowBottomMargin, highTopMargin, highBottomMargin);
                 droppingBlock.ChangeSprite(scoreType);
 
-                if(scoreType is ScoreType.Hit)
+                if(scoreType is ScoreType.Hit || scoreType is ScoreType.PerfectHit)
                 {
                     effectPlayer.clip = hitSound;
                     effectPlayer.Play();

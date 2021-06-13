@@ -24,9 +24,17 @@ public class DroppingBlock : MonoBehaviour
     {
         Image droppingBlockImage = GetComponent<Image>();
         if (scoreType is ScoreType.PerfectHit)
+        {
             droppingBlockImage.sprite = perfectHitSprite;
+            Vector3 scale = droppingBlockImage.rectTransform.localScale;
+            droppingBlockImage.rectTransform.localScale = new Vector3(scale.x, scale.y * 1.6f);
+        }
         else if (scoreType is ScoreType.Hit)
+        {
             droppingBlockImage.sprite = hitSprite;
+            Vector3 scale = droppingBlockImage.rectTransform.localScale;
+            droppingBlockImage.rectTransform.localScale = new Vector3(scale.x, scale.y * 1.6f);
+        }
         else if (scoreType is ScoreType.AverageHit)
             droppingBlockImage.sprite = averageHitSprite;
         else if (scoreType is ScoreType.Miss)

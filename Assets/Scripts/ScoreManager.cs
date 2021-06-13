@@ -35,7 +35,7 @@ namespace ScoreSystem
             if ((int) yPosition == (int) yTarget)
             {
                 score += 5;
-                return ScoreType.Hit; //TODO change this to perfect hit
+                return ScoreType.PerfectHit;
             }
             else if (yPosition >= lowBottomMargin && yPosition <= lowTopMargin)
             {

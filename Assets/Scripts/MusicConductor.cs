@@ -42,9 +42,11 @@ public class MusicConductor : MonoBehaviour
 
     void Start()
     {
-        post = GameObject.Find("PostProcessing").GetComponent<PostProcessingControl>();
+        GameObject postProcessing = GameObject.Find("PostProcessing");
+        if(postProcessing != null)
+            post.GetComponent<PostProcessingControl>();
         //Record the time when the music starts
-        dspSongTime = (float)AudioSettings.dspTime;
+        dspSongTime = (float) AudioSettings.dspTime;
         int i = 0;
         foreach (Transform child in transform)
         {
@@ -78,7 +80,8 @@ public class MusicConductor : MonoBehaviour
 
     void OnBeat()
     {
-        post.AdjustColorGrading();
+        if (post != null)
+            post.AdjustColorGrading();
     }
 
     void CreateBlock()
