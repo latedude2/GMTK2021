@@ -18,7 +18,7 @@ namespace ScoreSystem
 
         private void Update()
         {
-            scoreText.text = "Score: " + (Score.score -60).ToString();
+            scoreText.text = "Score: " + (Score.score - 60 + (Score.dancers - 3) * 50).ToString();
             if (Score.score < 60)
                 Score.score = 60;
         }
