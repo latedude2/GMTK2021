@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2749691910466227617, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4165636572023447420, guid: a85714105270e77469ba62eb96326f0d, type: 3}
       propertyPath: m_Text
       value: Spin faster
