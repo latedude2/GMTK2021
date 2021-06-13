@@ -11,6 +11,8 @@ public class PostProcessingControl : MonoBehaviour
     private ChromaticAberration chromaticAberration;
     private Bloom bloom;
     private ColorGrading colorGrading;
+    private float bloomAddition = 0;
+    private float bloomFallSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +27,13 @@ public class PostProcessingControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bloom.intensity.value = Map(0, 15, 0, maxScore, Score.score);
-        chromaticAberration.intensity.value = Map(0, 1, 0, maxScore, Score.score); ;
+        bloom.intensity.value = Map(0, 15, 0, maxScore, Score.score) + bloomAddition;
+        chromaticAberration.intensity.value = Map(0, 1, 0, maxScore, Score.score);
+        Debug.Log("Bloom addition: " + bloomAddition);
+        if(bloomAddition > 0)
+        {
+            bloomAddition = bloomAddition - bloomFallSpeed * Time.deltaTime;
+        }
     }
 
     public void AdjustColorGrading()
@@ -34,6 +41,12 @@ public class PostProcessingControl : MonoBehaviour
         //Debug.Log("Adjusting color hue");
         colorGrading.hueShift.value = Random.Range(-180, 180);
     }
+
+    public void BounceBloom()
+    {
+        bloomAddition = 5f;
+    }
+
 
     public float Map(float from, float to, float from2, float to2, float value)
     {

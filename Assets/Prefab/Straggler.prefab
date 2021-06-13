@@ -196,6 +196,9 @@ MonoBehaviour:
   speed: 0.2
   circle: {fileID: 0}
   audioSource: {fileID: 4669105633538402345}
+  joinSound:
+  - {fileID: 8300000, guid: 598915f3a9ddebd4cace461db01a7574, type: 3}
+  - {fileID: 8300000, guid: 6b9d54c0acdf20f49af2f7dd66b4bbe8, type: 3}
 --- !u!82 &4669105633538402345
 AudioSource:
   m_ObjectHideFlags: 0
