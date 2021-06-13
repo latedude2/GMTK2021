@@ -68,7 +68,7 @@ public class Circle : MonoBehaviour
     void CircleRotation()
     {
         transform.Rotate(new Vector3(0, 0, circleRotationSpeed * Time.deltaTime));
-        circleRotationSpeed = baseDancerRotationSpeed * ScoreManager.score / (scoreNeededPerDancer * dancerCount);
+        circleRotationSpeed = baseDancerRotationSpeed * Score.score / (scoreNeededPerDancer * dancerCount);
 
         if (circleRotationSpeed < loseDancerRotationSpeed)
         {
