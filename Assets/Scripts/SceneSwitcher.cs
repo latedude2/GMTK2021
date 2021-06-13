@@ -11,4 +11,9 @@ public class SceneSwitcher : MonoBehaviour
         Debug.Log("Scene load called");
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void ResetScore()
+    {
+        Score.score = 60;
+    }
 }

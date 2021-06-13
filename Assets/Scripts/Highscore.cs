@@ -7,6 +7,6 @@ public class Highscore : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Text>().text = Score.score.ToString();
+        GetComponent<Text>().text = (Score.score - 60).ToString();
     }
 }
