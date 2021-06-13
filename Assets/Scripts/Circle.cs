@@ -48,7 +48,7 @@ public class Circle : MonoBehaviour
 
     void Movement()
     {
-        /*
+        /* Old WASD movement
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         
