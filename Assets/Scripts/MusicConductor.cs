@@ -36,6 +36,12 @@ public class MusicConductor : MonoBehaviour
 
     public GameObject postProcessing;
 
+    public int minCounter = 100;
+    public int maxCounter;
+    private int randomChatterCounter;
+    public AudioSource randomChatterSource;
+    public AudioClip[] randomChatterSound;
+
     private void Awake()
     {
         //Calculate the number of seconds in each beat
@@ -44,6 +50,7 @@ public class MusicConductor : MonoBehaviour
 
     void Start()
     {
+        randomChatterCounter = minCounter;
         postProcessing = GameObject.Find("PostProcessing");
         post = postProcessing.GetComponent<PostProcessingControl>();
 
@@ -81,6 +88,19 @@ public class MusicConductor : MonoBehaviour
             oldBeatVal = newBeatVal; 
         }
 
+    }
+
+    void Update()
+    {
+        randomChatterCounter--;
+
+        if(randomChatterCounter <= 0)
+        {
+            int i = Random.Range(0, randomChatterSound.Length);
+            randomChatterSource.clip = randomChatterSound[i];
+            randomChatterSource.Play();
+            randomChatterCounter = Random.Range(minCounter, maxCounter);
+        }
     }
 
     private IEnumerator SyncLayers()
