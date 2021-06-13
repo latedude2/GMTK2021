@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8733452705595594415, guid: a85714105270e77469ba62eb96326f0d, type: 3}
+      propertyPath: gameTimeInSec
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85714105270e77469ba62eb96326f0d, type: 3}
 --- !u!114 &549269439 stripped

@@ -31,8 +31,8 @@ public class Timer : MonoBehaviour
         {
             timeLeft = Mathf.Max(0, timeLeft - Time.fixedDeltaTime);
 
-            int mins = Mathf.RoundToInt(timeLeft / 60);
-            int secs = Mathf.RoundToInt(timeLeft % 60);
+            int mins = (int) timeLeft / 60;
+            int secs = (int) timeLeft % 60;
 
             timeText.text = mins.ToString("00") + ":" + secs.ToString("00");
 
