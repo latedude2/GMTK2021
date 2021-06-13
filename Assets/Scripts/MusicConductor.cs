@@ -44,6 +44,9 @@ public class MusicConductor : MonoBehaviour
 
     void Start()
     {
+        postProcessing = GameObject.Find("PostProcessing");
+        post = postProcessing.GetComponent<PostProcessingControl>();
+
         //Record the time when the music starts
         dspSongTime = (float) AudioSettings.dspTime;
         int i = 0;
@@ -79,8 +82,7 @@ public class MusicConductor : MonoBehaviour
 
     void OnBeat()
     {
-        if (post != null)
-            post.AdjustColorGrading();
+        post.AdjustColorGrading();
     }
 
     void CreateBlock()
