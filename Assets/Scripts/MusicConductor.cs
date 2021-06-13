@@ -85,6 +85,7 @@ public class MusicConductor : MonoBehaviour
     void OnBeat()
     {
         post.AdjustColorGrading();
+        post.BounceBloom();
     }
 
     void CreateBlock()
