@@ -72,7 +72,7 @@ public class Circle : MonoBehaviour
 
         if (circleRotationSpeed < loseDancerRotationSpeed)
         {
-            Score.dancers++;
+            Score.dancers--;
             dancerCount--;
             musicPlayer.GetComponent<MusicConductor>().RemoveMusicLayer();
             SpawnDancers(dancerCount);
@@ -83,7 +83,7 @@ public class Circle : MonoBehaviour
     {
         if (circleRotationSpeed > newDancerRotationSpeed)
         {
-            Score.dancers--;
+            Score.dancers++;
             dancerCount++;
             musicPlayer.GetComponent<MusicConductor>().AddMusicLayer();
             SpawnDancers(dancerCount);
