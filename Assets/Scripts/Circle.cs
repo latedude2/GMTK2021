@@ -25,7 +25,7 @@ public class Circle : MonoBehaviour
     void Start()
     {
         SpawnDancers(dancerCount);
-        spinText = GameObject.Find("Canvas").transform.Find("Spin").GetComponent<Text>();
+        spinText = GameObject.Find("Canvas").transform.Find("GameStatus").Find("Spin").GetComponent<Text>();
     }
 
     // Update is called once per frame
