@@ -36,12 +36,23 @@ public class Timer : MonoBehaviour
 
             timeText.text = mins.ToString("00") + ":" + secs.ToString("00");
 
-            if (mins == 0 && secs == 0)
+            if(mins == 0)
             {
-                Debug.Log("highscoreScene is being loaded");
-                SceneManager.LoadScene("HighscoreScene");
-                isStopped = true;
+                if (secs < 10)
+                {
+                    timeText.fontSize = 35;
+                    timeText.color = Color.red;
+                }
+
+                if (secs == 0)
+                {
+                    Debug.Log("highscoreScene is being loaded");
+                    SceneManager.LoadScene("HighscoreScene");
+                    isStopped = true;
+                }
             }
+
+            
         }
     }
 }
