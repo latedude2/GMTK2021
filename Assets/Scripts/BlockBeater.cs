@@ -36,12 +36,12 @@ public class BlockBeater : MonoBehaviour
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
         targetY = onBeatBlockTransform.position.y;
-        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 51;
+        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 - 11;
 
-        lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 15;
-        lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 15;
-        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 50;
-        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 50;
+        lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 20;
+        lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 20;
+        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 + 10;
+        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 - 10;
 
         effectPlayer = GetComponent<AudioSource>();
     }
@@ -86,7 +86,6 @@ public class BlockBeater : MonoBehaviour
 
     public void CreateNewDroppingBlock()
     {
-        GameObject newBlock = Instantiate(droppingBlockPrefab, transform);
-        droppingBlockQueue.Enqueue(newBlock.GetComponent<DroppingBlock>());
+        droppingBlockQueue.Enqueue(Instantiate(droppingBlockPrefab, transform).GetComponent<DroppingBlock>());
     }
 }

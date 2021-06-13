@@ -18,7 +18,6 @@ public class Circle : MonoBehaviour
     public GameObject dancerPrefab;
     public int scoreNeededPerDancer = 20;
     public GameObject musicPlayer;
-    private Text dancerText;
     private Text spinText;
 
 
@@ -26,17 +25,15 @@ public class Circle : MonoBehaviour
     void Start()
     {
         SpawnDancers(dancerCount);
-        dancerText = GameObject.Find("Canvas").transform.Find("Dancers").GetComponent<Text>();
         spinText = GameObject.Find("Canvas").transform.Find("Spin").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dancerText.text = "Dancers: " + dancerCount + "/" + (int)(ScoreManager.score / scoreNeededPerDancer);
         if(IsAbleToGetNewDancer())
         {
-            spinText.text = "Spinnin good!";
+            spinText.text = "Get more dancers!";
         }
         else
         {
