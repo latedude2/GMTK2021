@@ -62,6 +62,8 @@ public class MusicConductor : MonoBehaviour
         AddMusicLayer();
 
         oldBeatVal = 1000;
+        
+        StartCoroutine(SyncLayers());
     }
 
     void FixedUpdate()
@@ -79,16 +81,18 @@ public class MusicConductor : MonoBehaviour
             oldBeatVal = newBeatVal; 
         }
 
-        SyncLayers();
     }
 
-    void SyncLayers()
+    private IEnumerator SyncLayers()
     {
-        for (int i = 1; i < musicSource.Length; i++)
+        while (true)
         {
-            musicSource[i].timeSamples = musicSource[0].timeSamples;
+            for (int i = 1; i < musicSource.Length; i++)
+            {
+                musicSource[i].timeSamples = musicSource[0].timeSamples;
+                yield return null;
+            }
         }
-
     }
 
     void OnBeat()
