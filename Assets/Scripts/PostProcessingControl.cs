@@ -25,8 +25,8 @@ public class PostProcessingControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bloom.intensity.value = Map(0, 15, 0, maxScore, ScoreManager.score);
-        chromaticAberration.intensity.value = Map(0, 1, 0, maxScore, ScoreManager.score); ;
+        bloom.intensity.value = Map(0, 15, 0, maxScore, Score.score);
+        chromaticAberration.intensity.value = Map(0, 1, 0, maxScore, Score.score); ;
     }
 
     public void AdjustColorGrading()
