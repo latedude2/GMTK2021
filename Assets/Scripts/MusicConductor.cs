@@ -78,6 +78,17 @@ public class MusicConductor : MonoBehaviour
             OnBeat(); 
             oldBeatVal = newBeatVal; 
         }
+
+        SyncLayers();
+    }
+
+    void SyncLayers()
+    {
+        for (int i = 1; i < musicSource.Length; i++)
+        {
+            musicSource[i].timeSamples = musicSource[0].timeSamples;
+        }
+
     }
 
     void OnBeat()
