@@ -33,12 +33,12 @@ public class BlockBeater : MonoBehaviour
         RectTransform droppingBlockTransform = droppingBlockPrefab.transform as RectTransform;
 
         targetY = onBeatBlockTransform.position.y;
-        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 51;
+        bottomY = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2;
 
         lowTopMargin = targetY + onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 15;
         lowBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 15;
-        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2 - 50;
-        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2 + 50;
+        highTopMargin = targetY + onBeatBlockTransform.rect.height / 2 + droppingBlockTransform.rect.height / 2;
+        highBottomMargin = targetY - onBeatBlockTransform.rect.height / 2 - droppingBlockTransform.rect.height / 2;
 
         effectPlayer = GetComponent<AudioSource>();
     }

@@ -6,7 +6,7 @@ using ScoreSystem;
 
 public class DroppingBlock : MonoBehaviour
 {
-    public static float speed = 600;
+    public static float speed = 400;
     public bool isStopped;
 
     public Sprite perfectHitSprite;
@@ -14,10 +14,17 @@ public class DroppingBlock : MonoBehaviour
     public Sprite averageHitSprite;
     public Sprite missSprite;
 
+    private RectTransform rectTransform;
+
+    private void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
     private void FixedUpdate()
     {
         if (!isStopped)
-            transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.fixedDeltaTime);
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y - speed * Time.fixedDeltaTime);
     }
 
     public void ChangeSprite(ScoreType scoreType)
@@ -32,8 +39,6 @@ public class DroppingBlock : MonoBehaviour
         else if (scoreType is ScoreType.Hit)
         {
             droppingBlockImage.sprite = hitSprite;
-            Vector3 scale = droppingBlockImage.rectTransform.localScale;
-            droppingBlockImage.rectTransform.localScale = new Vector3(scale.x, scale.y * 1.6f);
         }
         else if (scoreType is ScoreType.AverageHit)
             droppingBlockImage.sprite = averageHitSprite;
