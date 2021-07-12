@@ -15,5 +15,6 @@ public class SceneSwitcher : MonoBehaviour
     public void ResetScore()
     {
         Score.score = 60;
+        Score.dancers = 3;
     }
 }
